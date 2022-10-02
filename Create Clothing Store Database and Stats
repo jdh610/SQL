@@ -1,0 +1,36 @@
+--create a clothing store database
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item_type TEXT, quantity INTEGER, price INTEGER, size TEXT);
+
+INSERT INTO clothing VALUES (1, "Shorts", 20, 25.00, "M");
+INSERT INTO clothing VALUES (2, "Socks", 15, 5.00, "M");
+INSERT INTO clothing VALUES (3, "Pants", 40, 60.00, "L");
+INSERT INTO clothing VALUES (4, "Underwear", 12, 10.00, "XL");
+INSERT INTO clothing VALUES (5, "Jeans", 50, 75.00, "S");
+INSERT INTO clothing VALUES (6, "Capris", 8, 34.00, "L");
+INSERT INTO clothing VALUES (7, "Leggings", 42, 40.00, "XL");
+INSERT INTO clothing VALUES (8, "Bras", 12, 20.00, "M");
+INSERT INTO clothing VALUES (9, "Belts", 30, 20.00, "L");
+INSERT INTO clothing VALUES (10, "Bathing Suits", 75, 30.00, "L");
+INSERT INTO clothing VALUES (11, "Tank Tops", 75, 30.00, "S");
+INSERT INTO clothing VALUES (12, "Skirts", 55, 60.00, "M");
+INSERT INTO clothing VALUES (13, "Sweatshirts", 40, 25.00, "L");
+INSERT INTO clothing VALUES (14, "Shoes", 50, 63.00, "S");
+INSERT INTO clothing VALUES (15, "Scarfs", 23, 15.00, "L");
+
+SELECT * FROM clothing 
+ORDER BY price;
+
+SELECT SUM(quantity) FROM clothing;
+
+--what are the most 5 most expensive items? 
+SELECT item_type, price
+FROM clothing
+order by price desc
+limit 5; 
+
+--what 5 items have the lowest quantity?
+SELECT item_type, quantity
+FROM clothing
+order by quantity asc
+limit 5;
